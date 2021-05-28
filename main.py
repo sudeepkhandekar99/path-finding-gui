@@ -2,17 +2,19 @@ import pygame
 import math
 from queue import PriorityQueue
 
+
 WIDTH = 600
 WIN = pygame.display.set_mode((WIDTH, WIDTH))
 pygame.display.set_caption("A* Path Finding Algorithm")
 
-RED = (255, 0, 0)
-GREEN = (0, 255, 0)
+RED = (255, 254, 106)
+GREEN = (255, 254, 106)
 BLUE = (0, 255, 0)
 YELLOW = (255, 255, 0)
 WHITE = (255, 255, 255)
-BLACK = (0, 0, 0)
-PURPLE = (128, 0, 128)
+BLACK = (131, 104, 83) 
+PURPLE = (53, 75, 50)
+PURPLE = (175, 216, 248)
 ORANGE = (255, 165 ,0)
 GREY = (128, 128, 128)
 TURQUOISE = (64, 224, 208)
@@ -189,7 +191,7 @@ def get_clicked_pos(pos, rows, width):
 
 
 def main(win, width):
-	ROWS = 50
+	ROWS = 30
 	grid = make_grid(ROWS, width)
 
 	start = None
