@@ -191,7 +191,7 @@ def get_clicked_pos(pos, rows, width):
 
 
 def main(win, width):
-	ROWS = 30
+	ROWS = 40
 	grid = make_grid(ROWS, width)
 
 	start = None
@@ -241,6 +241,9 @@ def main(win, width):
 					start = None
 					end = None
 					grid = make_grid(ROWS, width)
+
+				if event.key == pygame.K_q:
+					pygame.quit()
 
 	pygame.quit()
 
