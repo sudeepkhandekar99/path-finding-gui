@@ -3,18 +3,15 @@ import math
 from queue import PriorityQueue
 
 
-WIDTH = 600
+WIDTH = 1000
 WIN = pygame.display.set_mode((WIDTH, WIDTH))
 pygame.display.set_caption("A* Path Finding Algorithm")
 
-RED = (255, 254, 106)
-GREEN = (255, 254, 106)
+YELLOW = (255, 254, 106)
 BLUE = (0, 255, 0)
-YELLOW = (255, 255, 0)
 WHITE = (255, 255, 255)
-BLACK = (131, 104, 83) 
-PURPLE = (53, 75, 50)
-PURPLE = (175, 216, 248)
+BROWN = (131, 104, 83) 
+CYAN = (175, 216, 248)
 ORANGE = (255, 165 ,0)
 GREY = (128, 128, 128)
 TURQUOISE = (64, 224, 208)
@@ -34,13 +31,13 @@ class Spot:
 		return self.row, self.col
 
 	def is_closed(self):
-		return self.color == RED
+		return self.color == YELLOW
 
 	def is_open(self):
-		return self.color == GREEN
+		return self.color == YELLOW
 
 	def is_barrier(self):
-		return self.color == BLACK
+		return self.color == BROWN
 
 	def is_start(self):
 		return self.color == ORANGE
@@ -55,19 +52,19 @@ class Spot:
 		self.color = ORANGE
 
 	def make_closed(self):
-		self.color = RED
+		self.color = YELLOW
 
 	def make_open(self):
-		self.color = GREEN
+		self.color = YELLOW
 
 	def make_barrier(self):
-		self.color = BLACK
+		self.color = BROWN
 
 	def make_end(self):
 		self.color = TURQUOISE
 
 	def make_path(self):
-		self.color = PURPLE
+		self.color = CYAN
 
 	def draw(self, win):
 		pygame.draw.rect(win, self.color, (self.x, self.y, self.width, self.width))
